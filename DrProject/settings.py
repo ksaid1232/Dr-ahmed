@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "corsheaders",
     #  "django.contrib.sites",
     "django.contrib.staticfiles",
     "rest_framework",
@@ -58,6 +59,7 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
 
 }
+
 # SITE_ID = 1
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -67,7 +69,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
+CORS_ORIGIN_ALLOW_ALL=True
 
 ROOT_URLCONF = "DrProject.urls"
 
@@ -104,10 +108,10 @@ WSGI_APPLICATION = "DrProject.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "accountdata",
-        "HOST": "localhost",
-        "USER": "root",
-        "PASSWORD": "123456789."
+        "NAME": "Kareemsaid$accountdata3",
+        "HOST": "Kareemsaid.mysql.pythonanywhere-services.com",
+        "USER": "Kareemsaid",
+        "PASSWORD": "oreiabvmopiEDFBOIPJKM123."
     }
 }
 
@@ -142,6 +146,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
